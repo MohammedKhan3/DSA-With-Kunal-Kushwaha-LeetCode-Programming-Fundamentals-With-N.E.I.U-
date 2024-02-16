@@ -1,0 +1,22 @@
+Write a program that has the class name Problem2 and that has the main method.
+● Write a second method named evenlySpaced that takes three integer parameters, a, b,
+and c.
+● One of the integers is the smallest, one integer is largest, and one is in between the other
+two. Return true if the three values are evenly spaced, so the difference between small
+and medium is the same as the difference between medium and large. Otherwise, return
+false. You can assume that the three integers will be unique values.
+● Several sample method calls are provided for you below. You should test your method
+inside the main method.
+
+public class Problem2 {
+    public static void main(String[] args) {
+        System.out.println(evenlySpaced(2,4,6)); 
+    }
+    public static boolean evenlySpaced(int a, int b, int c) {
+        int max = Math.max(a, Math.max(b, c));
+        int min = Math.min(a, Math.min(b, c));
+        int mid = a + b + c - max - min;
+
+        return (max - mid) == (mid - min);
+    }
+}
